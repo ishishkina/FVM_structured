@@ -1,0 +1,4 @@
+mesh=Grids/1.msh
+data=res.plt
+iterations=1
+mod=0

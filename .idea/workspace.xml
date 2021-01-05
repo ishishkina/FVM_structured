@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c5e11f29-1bcd-4478-8ad8-df192f0b3c26" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ipsdQBXqOBOw0fK8ng1hXge58Y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/B_OutputFields.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\STUDY\magister degree\5 course\1 semester\ggt\project_diff\GridTools" />
+      <recent name="D:\STUDY\magister degree\5 course\1 semester\ggt\project_diff\Functions" />
+      <recent name="D:\STUDY\magister degree\5 course\1 semester\ggt\project_diff\CalcOperators" />
+      <recent name="D:\STUDY\magister degree\5 course\1 semester\ggt\project_diff\grids" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="A_main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="project_diff" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/A_main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.A_main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c5e11f29-1bcd-4478-8ad8-df192f0b3c26" name="Default Changelist" comment="" />
+      <created>1602615954090</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602615954090</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602792020175">
+      <screen x="0" y="0" width="1536" height="821" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.821@0.0.1536.821" timestamp="1602792020175" />
+    <state width="757" height="151" key="GridCell.Tab.0.bottom" timestamp="1609775300942">
+      <screen x="0" y="0" width="1536" height="821" />
+    </state>
+    <state width="757" height="151" key="GridCell.Tab.0.bottom/0.0.1536.821@0.0.1536.821" timestamp="1609775300942" />
+    <state width="757" height="151" key="GridCell.Tab.0.center" timestamp="1609775300942">
+      <screen x="0" y="0" width="1536" height="821" />
+    </state>
+    <state width="757" height="151" key="GridCell.Tab.0.center/0.0.1536.821@0.0.1536.821" timestamp="1609775300942" />
+    <state width="757" height="151" key="GridCell.Tab.0.left" timestamp="1609775300942">
+      <screen x="0" y="0" width="1536" height="821" />
+    </state>
+    <state width="757" height="151" key="GridCell.Tab.0.left/0.0.1536.821@0.0.1536.821" timestamp="1609775300942" />
+    <state width="757" height="151" key="GridCell.Tab.0.right" timestamp="1609775300942">
+      <screen x="0" y="0" width="1536" height="821" />
+    </state>
+    <state width="757" height="151" key="GridCell.Tab.0.right/0.0.1536.821@0.0.1536.821" timestamp="1609775300942" />
+    <state width="1515" height="260" key="GridCell.Tab.1.bottom" timestamp="1608303307827">
+      <screen x="0" y="0" width="1536" height="821" />
+    </state>
+    <state width="1515" height="260" key="GridCell.Tab.1.bottom/0.0.1536.821@0.0.1536.821" timestamp="1608303307827" />
+    <state width="1515" height="260" key="GridCell.Tab.1.center" timestamp="1608303307827">
+      <screen x="0" y="0" width="1536" height="821" />
+    </state>
+    <state width="1515" height="260" key="GridCell.Tab.1.center/0.0.1536.821@0.0.1536.821" timestamp="1608303307827" />
+    <state width="1515" height="260" key="GridCell.Tab.1.left" timestamp="1608303307827">
+      <screen x="0" y="0" width="1536" height="821" />
+    </state>
+    <state width="1515" height="260" key="GridCell.Tab.1.left/0.0.1536.821@0.0.1536.821" timestamp="1608303307827" />
+    <state width="1515" height="260" key="GridCell.Tab.1.right" timestamp="1608303307827">
+      <screen x="0" y="0" width="1536" height="821" />
+    </state>
+    <state width="1515" height="260" key="GridCell.Tab.1.right/0.0.1536.821@0.0.1536.821" timestamp="1608303307827" />
+    <state x="277" y="54" key="SettingsEditor" timestamp="1602782850022">
+      <screen x="0" y="0" width="1536" height="821" />
+    </state>
+    <state x="277" y="54" key="SettingsEditor/0.0.1536.821@0.0.1536.821" timestamp="1602782850022" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1609772522165">
+      <screen x="0" y="0" width="1536" height="821" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.821@0.0.1536.821" timestamp="1609772522165" />
+    <state x="431" y="142" width="672" height="678" key="search.everywhere.popup" timestamp="1605087451713">
+      <screen x="0" y="0" width="1536" height="821" />
+    </state>
+    <state x="431" y="142" width="672" height="678" key="search.everywhere.popup/0.0.1536.821@0.0.1536.821" timestamp="1605087451713" />
+  </component>
+</project>
