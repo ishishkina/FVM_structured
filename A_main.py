@@ -3,11 +3,11 @@
 import os
 import numpy as np
 from CalcOperators import B_CalcDivergence, B_CalcGradient, B_CalcLaplacian, B_CalcRotor
-from GridTools import B_CalcMetric, B_OutputFields
+from GridTools import B_CalcMetric, B_OutputFields, B_ReadMesh
 from Functions import B_Functions
 import InputTools
 
-initializer = InputTools.Initializer('input.txt')
+initializer = InputTools.Initializer(os.environ.get('FVM_INPUT', 'input.txt'))
 #InputFile = 'input.txt'  # name of input file
 
 if not os.path.exists('Results'):
@@ -42,19 +42,12 @@ else:
     method = 'second order upwind'
 print('Method for calculation of convective terms :', method)
 
-# Read nodes number (NI,NJ) from file with mesh
-print('Read nodes number from file:', MeshFile)
-mesh = open(MeshFile, 'r')
-values = mesh.readline()
-parts = values.split(' ')
-NI = int(parts[0])
-NJ = int(parts[1])
+# Read computational mesh
+print('Read mesh from file:', MeshFile)
+NI, NJ, X, Y = B_ReadMesh.read_mesh(MeshFile)
 print('NI=', NI, ', NJ = ', NJ)
 
 # Initialization of all arrays
-X = np.zeros((NI, NJ), dtype=float)  # mesh nodes X-coordinates
-Y = np.zeros((NI, NJ), dtype=float)  # mesh nodes Y-coordinates
-
 P = np.zeros((NI + 1, NJ + 1), dtype=float)  # pressure
 GradP = np.zeros((NI + 1, NJ + 1, 2), dtype=float)  # pressure gradient
 GradPExact = np.zeros((NI + 1, NJ + 1, 2), dtype=float)  # exact value of pressure gradient
@@ -78,16 +71,6 @@ IFaceCenter = np.zeros((NI, NJ - 1, 2), dtype=float)  # Face Centers for I-faces
 IFaceVector = np.zeros((NI, NJ - 1, 2), dtype=float)  # Face Vectors for I-faces
 JFaceCenter = np.zeros((NI - 1, NJ, 2), dtype=float)  # Face Centers for J-faces
 JFaceVector = np.zeros((NI - 1, NJ, 2), dtype=float)  # Face Vectors for J-faces
-
-# Read grid from file with mesh
-for J in range(NJ):
-    for I in range(NI):
-        values = mesh.readline()
-        parts = values.split()
-        X[I, J] = float(parts[0])
-        Y[I, J] = float(parts[1])
-        #print(X[I, J], Y[I, J])
-mesh.close()
 
 # Calculate metric
 print('Calculate metric')
@@ -120,32 +103,32 @@ print('Calculate gradient')
 for I in range(Niter):
     B_CalcGradient.CalcGradient(NI, NJ, P, GradP, CellVolume, CellCenter, IFaceCenter, IFaceVector, JFaceCenter, JFaceVector)
     if not initializer.data:
-       GradPError[1:NI, 1:NJ, :] = np.absolute((GradPExact[1:NI, 1:NJ, :] - GradP[1:NI, 1:NJ, :]) / GradPExact[1:NI, 1:NJ, :])
+       GradPError[1:NI, 1:NJ, :] = B_Functions.RelativeError(GradPExact[1:NI, 1:NJ, :], GradP[1:NI, 1:NJ, :])
        print('Maximum GradP-Error', np.amax(GradPError[:, :, :]))
 
 if not initializer.data:
-    print('Maximum GradPx-Error', np.amax(GradPError[:, :, :]))
-    print('Maximum GradPy-Error', np.amax(GradPError[:, :, :]))
+    print('Maximum GradPx-Error', np.amax(GradPError[:, :, 0]))
+    print('Maximum GradPy-Error', np.amax(GradPError[:, :, 1]))
 
 # Calculate divergence
 print('Calculate divergence')
 B_CalcDivergence.CalcDivergence(mode, NI, NJ, V, divV, P, GradP, CellVolume, CellCenter, IFaceCenter, IFaceVector, JFaceCenter, JFaceVector)
 if not initializer.data:
-    divVError[1:NI, 1:NJ] = np.absolute((divVExact[1:NI, 1:NJ] - divV[1:NI, 1:NJ]) / divVExact[1:NI, 1:NJ])
+    divVError[1:NI, 1:NJ] = B_Functions.RelativeError(divVExact[1:NI, 1:NJ], divV[1:NI, 1:NJ])
     print('Maximum divV-Error', np.amax(divVError[:, :]))
 
 # Calculate rotor
 print('Calculate rotor')
 B_CalcRotor.CalcRotor(NI, NJ, V, rotV, CellVolume, CellCenter, IFaceCenter, IFaceVector, JFaceCenter, JFaceVector)
 if not initializer.data:
-    rotVError[1:NI, 1:NJ] = np.absolute((rotVExact[1:NI, 1:NJ] - rotV[1:NI, 1:NJ]) / abs(rotVExact[1:NI, 1:NJ]))
+    rotVError[1:NI, 1:NJ] = B_Functions.RelativeError(rotVExact[1:NI, 1:NJ], rotV[1:NI, 1:NJ])
     print('Maximum rotV-Error', np.amax(rotVError[:, :]))
 
 # Calculate laplacian
 print('Calculate laplacian')
 B_CalcLaplacian.CalcLaplacian(NI, NJ, P, GradP, LapP, CellVolume, CellCenter, IFaceCenter, IFaceVector, JFaceCenter, JFaceVector)
 if not initializer.data:
-    LapPError[1:NI, 1:NJ] = np.absolute((LapPExact[1:NI, 1:NJ] - LapP[1:NI, 1:NJ]) / LapPExact[1:NI, 1:NJ])
+    LapPError[1:NI, 1:NJ] = B_Functions.RelativeError(LapPExact[1:NI, 1:NJ], LapP[1:NI, 1:NJ])
     print('Maximum LapP-Error', np.amax(LapPError[:, :]))
 
 # Output fields

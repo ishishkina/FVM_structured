@@ -40,6 +40,6 @@ def CalcRotor(NI, NJ, V, rotV, CellVolume, CellCenter, IFaceCenter, IFaceVector,
                 DN = np.linalg.norm(RF[IFACE, :] - RN[:]) # distance between points N and F
 
                 VF = np.array([B_Functions.RLinearInterp(DC, DN, V[I, J, k], V[IN, JN, k]) for k in range(2)])
-                rotV[I, J] = rotV[I, J] + np.cross(SF[IFACE], VF)
+                rotV[I, J] = rotV[I, J] + SF[IFACE, 0] * VF[1] - SF[IFACE, 1] * VF[0]  # 2D cross product (z-component)
 
             rotV[I, J] = rotV[I, J] / VOL

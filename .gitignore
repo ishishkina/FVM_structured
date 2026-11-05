@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+
+# IDE settings
+.idea/
+.vscode/
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# Output written by A_main.py
+Results/

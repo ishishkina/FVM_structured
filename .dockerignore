@@ -1,0 +1,10 @@
+.git
+.github
+venv
+.venv
+.idea
+.vscode
+__pycache__
+.pytest_cache
+Results
+docs

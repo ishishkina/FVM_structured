@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "FVM_structured: finite-volume differential operators on 2D structured curvilinear grids"
+abstract: >-
+  Python/NumPy implementation of gradient, divergence, curl and Laplacian
+  operators on 2D structured curvilinear grids using the finite volume method,
+  with an automated verification suite against exact analytical solutions.
+authors:
+  - family-names: Shishkina
+    given-names: Irina
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/ishishkina/FVM_structured"
+keywords:
+  - finite volume method
+  - curvilinear grids
+  - Green-Gauss gradient
+  - verification
+  - Python

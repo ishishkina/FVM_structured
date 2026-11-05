@@ -47,7 +47,17 @@ def RotVelocityExact(X, Y):
 
 
 def LapPressureExact(X, Y):
-    return 1.0
+    return 0.0
     # 0.0
     # 4.0
     # 6*X + 2.0
+
+
+
+def RelativeError(exact, numerical, eps=1e-12):
+    """Relative error |exact - numerical| / |exact|; falls back to the absolute
+    error where the exact value is (close to) zero, avoiding division by zero."""
+    exact = np.asarray(exact, dtype=float)
+    diff = np.abs(exact - numerical)
+    scale = np.abs(exact)
+    return np.where(scale > eps, diff / np.where(scale > eps, scale, 1.0), diff)
